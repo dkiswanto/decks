@@ -1,0 +1,14 @@
+{
+  "name": "decks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "marp --html -s ./."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^0.17.0"
+  }
+}
