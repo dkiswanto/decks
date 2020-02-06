@@ -1,10 +1,13 @@
 ### Decks
 
-#### How to run
+#### How to
 ```
+// Run
 $ npm run server
 
-or
-
-$ npx marp --html -s ./.
+// Build
+$ 
 ```
+
+#### Slides
+[Rapid Web Development with Rails 6](rapid-web-development-with-rails-6)
