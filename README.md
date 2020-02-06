@@ -6,8 +6,5 @@
 $ npm run server
 
 // Build
-$ 
+$ npm run build
 ```
-
-#### Slides
-[Rapid Web Development with Rails 6](rapid-web-development-with-rails-6)
