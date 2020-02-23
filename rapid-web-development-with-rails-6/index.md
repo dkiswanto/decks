@@ -68,6 +68,7 @@ http://installrails.com/steps/choose_os
 
 ## Pre-requisites
 
+<!-- _class: small -->
 ```bash
 ➜ ruby -v
 ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-darwin18]
@@ -83,6 +84,9 @@ Bundler version 2.0.2
 
 ➜ rails -v
 Rails 6.0.0
+
+➜ yarn -v or npm -v
+1.16.0 / 6.9.0
 ```
 
 ---
@@ -103,18 +107,20 @@ $ rails server
 <img src="welcome-rails.png" alt="Paris" class="center">
 
 ---
+### Ruby / Rails - the Routes
+
 
 ```rb
 # config/routes.rb
 Rails.application.routes.draw do
-  get  '/posts',     to: 'posts#index',  as: :activities
+  get  '/posts',     to: 'posts#index',  as: :posts
   post '/posts',     to: 'posts#create', as: nil
-  get  '/posts/new', to: 'posts#new',    as: :new_activity
-  get  '/posts/:id', to: 'posts#show',   as: :activity
+  get  '/posts/new', to: 'posts#new',    as: :new_post
+  get  '/posts/:id', to: 'posts#show',   as: :post
 
   # it will generate url_helper such as:
-  # activities_url    -> http://localhost:5000/posts
-  # activity_url(:id) -> http://localhost:5000/posts/:id
+  # posts_url    -> http://localhost:5000/posts
+  # post_url(:id) -> http://localhost:5000/posts/:id
   # new_activity_url  -> http://localhost:5000/posts/new
 end
 ```
@@ -215,3 +221,57 @@ end
   </div>
 </div>
 ```
+
+
+---
+
+### Schema
+![](schema.png)
+
+---
+
+**Base MVC**
+
+<!-- _class: small -->
+```rb
+Rails.application.routes.draw do
+  get  '/posts', to: 'posts#index', as: :posts
+end
+```
+
+<!-- _class: small -->
+```rb
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+end
+```
+
+<!-- _class: small -->
+```rb
+# $ rails g model Post username:string message:string
+class Post < ApplicationRecord
+end
+```
+
+<!-- _class: small -->
+```rb
+<p>Posts</p>
+<% @posts.each do |p| %>
+  <%= p.username %><br>
+  <%= p.message %><br>
+  <%= p.created_at.strftime('%FT%T') %><br><br>
+<% end %>
+```
+
+---
+
+### Seed Data
+```rb
+# bundle exex rails c
+Post.create!(username: "dkiswanto", message: "first post message")
+Post.create!(username: "dkiswanto", message: "second post message")
+```
+
+![width:300px](list-post-1.png)
