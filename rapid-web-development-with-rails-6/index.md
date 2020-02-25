@@ -251,7 +251,7 @@ end
 
 ---
 
-### Ruby / Rails - the View (view model)
+### Ruby / Rails - the View (view action)
 
 <!-- _class: small -->
 
@@ -279,38 +279,54 @@ end
 
 ---
 
+Huhu, now you know basic Rails MVC, let's start code!!
+
+<p></p>
+<p></p>
+
+> Talk is cheap, show me the code! - Linus Torvalds (probably)
+
+---
+
 ### Schema
 ![](schema.png)
 
 ---
 
-**Base MVC**
+**Base MVC - Routes and Controller**
 
-<!-- _class: small -->
 ```rb
+# config/routes.rb
 Rails.application.routes.draw do
-  get  '/posts', to: 'posts#index', as: :posts
+  get '/posts', to: 'posts#index', as: :posts
 end
 ```
 
-<!-- _class: small -->
 ```rb
+# app/controllers/posts_controller.rb
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+
+    # will automatically render view in
+    # app/views/posts/index.html.erb
   end
 end
 ```
 
-<!-- _class: small -->
+---
+
+**Base MVC - Model and View**
+
 ```rb
 # $ rails g model Post username:string message:string
+# app/models/post.rb
 class Post < ApplicationRecord
 end
 ```
 
-<!-- _class: small -->
 ```rb
+# app/views/posts/index.html.erb
 <p>Posts</p>
 <% @posts.each do |p| %>
   <%= p.username %><br>
@@ -323,7 +339,7 @@ end
 
 ### Seed Data
 ```rb
-# bundle exex rails c
+# bundle exec rails console
 Post.create!(username: "dkiswanto", message: "first post message")
 Post.create!(username: "dkiswanto", message: "second post message")
 ```

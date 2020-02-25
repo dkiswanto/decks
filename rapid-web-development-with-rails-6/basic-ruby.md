@@ -136,7 +136,7 @@ example[:new] = 'oy oy oy'
 
 ---
 
-## Function and Generator, Conditional, and Loop (1)
+## Function, Conditional, and Loop
 
 ```rb
 def player_classification(players)
@@ -160,6 +160,31 @@ player_classification(players)
 
 # WOW, without parentheses???
 ```
+
+---
+
+## Ruby Blocks
+
+<!-- _class: medium -->
+```
+def multiplier(x, y)
+  value = x * y
+
+  # for now, let's just assume this `yield` functionality as a callback
+  yield value
+end
+
+multiplier(6, 3) { |value| puts "the result is #{value}" }
+
+# or
+
+multiplier(6,3) do |value|
+  puts "the result is #{value}"
+  puts "do another thing with result #{value}"
+end
+
+```
+** reference: https://mixandgo.com/learn/mastering-ruby-blocks-in-less-than-5-minutes
 
 ---
 
