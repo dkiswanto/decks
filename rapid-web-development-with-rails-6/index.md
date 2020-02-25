@@ -46,6 +46,31 @@ Dede Kiswanto, "Digital Product Engineer"
 
 ---
 
+## But why Rails?? What is the benefits??
+* Great Community (a lot of libraries a.k.a `gems`, examples, and tutorials, etc)
+* One single package (active_record, active_storage, actionmailer, activejob, etc)
+** https://github.com/rails/rails
+* Convention over configuration
+** fixed design pattern
+** code generators
+
+---
+
+### Code Generators Example
+
+
+![width:600px](https://2.bp.blogspot.com/-LCXxUCWQcxQ/WqiC6ytdN7I/AAAAAAAAAy8/8eOoRkynmTUJyMPW_TJe7Q7XSHWVeeufQCLcBGAs/s1600/Screenshot%2Bfrom%2B2018-03-14%2B09-03-01.png)
+
+
+---
+
+### Code Generators Example (2)
+
+![width:900px](https://camo.githubusercontent.com/27bba2d79116dfb0f81989bd06114ad569fc0b23/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f666c617469726f6e2d6275636b65742f726561646d652d6c6573736f6e732f73636166666f6c64732e706e67
+)
+
+---
+
 ## Who's using it?
 
 <div style="margin-top: 200px"></div>
@@ -59,7 +84,12 @@ Dede Kiswanto, "Digital Product Engineer"
 
 ---
 
-## Lets start!
+## Any Questions?
+
+---
+
+
+## Lets start, then!
 ```
 http://installrails.com/steps/choose_os
 ```
@@ -104,9 +134,34 @@ $ bundle install
 ```sh
 $ rails server
 ```
-<img src="welcome-rails.png" alt="Paris" class="center">
+<img src="welcome-rails.png" class="center">
 
 ---
+
+But, lets start with Basic Ruby first
+
+[Basic Ruby](./basic-ruby.md)
+
+---
+
+### Hey now, i know some basic ruby, let's make something awesome then
+
+#### InstantFame
+* User authentication (registration)
+* Create new Post
+* Post timetline
+* Comment feature
+* Deploy to Production!! (via Heroku)
+
+---
+
+
+### MVC Overview
+
+<img src="https://rei-website-prod.s3.amazonaws.com/uploads/image/image/39/mvc.png" class="center">
+
+---
+
 ### Ruby / Rails - the Routes
 
 
@@ -221,7 +276,6 @@ end
   </div>
 </div>
 ```
-
 
 ---
 
