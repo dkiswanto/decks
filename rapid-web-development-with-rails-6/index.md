@@ -15,6 +15,9 @@ style: |
     margin-right: auto;
     width: 50%;
   }
+  p.small  {
+    font-size: 10px;
+  }
 ---
 
 # Rapid Web Development with Rails 6
@@ -22,7 +25,7 @@ Dede Kiswanto, "Digital Product Engineer"
 
 <p></p>
 
-![height:23px](https://image.flaticon.com/icons/svg/25/25231.svg)  github.com/kinto-d
+![height:23px](https://image.flaticon.com/icons/svg/25/25231.svg)   github.com/kinto-d
 ![height:25px](https://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg)  linkedin.com/in/dkiswanto
 
 
@@ -51,16 +54,14 @@ Dede Kiswanto, "Digital Product Engineer"
 * One single package (active_record, active_storage, actionmailer, activejob, etc)
 ** https://github.com/rails/rails
 * Convention over configuration
-** fixed design pattern
-** code generators
+** fixed design pattern (with help code generators of course)
+** produce less code to maintain
 
 ---
 
 ### Code Generators Example
 
-
 ![width:600px](https://2.bp.blogspot.com/-LCXxUCWQcxQ/WqiC6ytdN7I/AAAAAAAAAy8/8eOoRkynmTUJyMPW_TJe7Q7XSHWVeeufQCLcBGAs/s1600/Screenshot%2Bfrom%2B2018-03-14%2B09-03-01.png)
-
 
 ---
 
@@ -68,6 +69,13 @@ Dede Kiswanto, "Digital Product Engineer"
 
 ![width:900px](https://camo.githubusercontent.com/27bba2d79116dfb0f81989bd06114ad569fc0b23/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f666c617469726f6e2d6275636b65742f726561646d652d6c6573736f6e732f73636166666f6c64732e706e67
 )
+
+---
+
+## Cons?? (IMHO)
+* Bloated memory application
+* Easy to get caught up in bad practices (N+1 query, etc)
+* Code can be hard to read if there's many people participating in single huge code base (maybe it's due too many way to express the code).
 
 ---
 
@@ -95,6 +103,13 @@ http://installrails.com/steps/choose_os
 ```
 
 ---
+
+## Survey first!
+Do you already know this tech-term?
+* Git (version control)
+* OOP (Object-oriented programming)
+
+----
 
 ## Pre-requisites
 
@@ -144,12 +159,12 @@ But, lets start with Basic Ruby first
 
 ---
 
-### Hey now, i know some basic ruby, let's make something awesome then
+> "Hey now, i know some basic ruby now, let's make something awesome then"
 
-#### InstantFame
+* InstantFame (Instagram-like application)
 * User authentication (registration)
 * Create new Post
-* Post timetline
+* Post timeline
 * Comment feature
 * Deploy to Production!! (via Heroku)
 
@@ -334,6 +349,8 @@ end
   <%= p.created_at.strftime('%FT%T') %><br><br>
 <% end %>
 ```
+<!-- _class: small -->
+* https://github.com/kinto-d/instantfame/commit/27a8bd890feefaf50de8903c893aa0d5a9275858
 
 ---
 
@@ -345,3 +362,61 @@ Post.create!(username: "dkiswanto", message: "second post message")
 ```
 
 ![width:300px](list-post-1.png)
+
+---
+
+# Beautify Views
+* Install Boostrap 4
+* Implement Card-View in Timeline Post
+* and Setup Landing Page
+* https://github.com/kinto-d/instantfame/commit/dc93ac2e6999565fc7099319ed84a2820e0e1132
+
+---
+
+# Create Post Action
+* New Post View
+* Create Post
+* Post Validation
+* Alert & Notice View
+* https://github.com/kinto-d/instantfame/commit/04b2fee3e94ef9cdbd3b0801c5b3599234b09832
+
+---
+
+# Post with Image Support
+* ActiveStorage Installation
+* Attachment Input + Show Image Attachment
+* https://github.com/kinto-d/instantfame/commit/4b991c3a635fe7ad2fa6474c8ac28348e79f076a
+
+---
+
+### Pagination
+
+* Add Kaminari Gem
+* Setup in Controller and View
+* Install Bootstrap 4 Pagination View
+* `rb rails generate kaminari:views bootstrap4`
+
+---
+
+# Deploy, Deploy, Deploy! (Heroku and VM)
+
+### to Heroku
+* Change to PostgreSQL
+* Update Config Database
+* Provision Database in Heroku
+* https://github.com/kinto-d/instantfame/commit/d6e2fbba68c8bc8396c043390f6aedd9a9589f4f
+
+---
+
+# Deploy, Deploy, Deploy! (Heroku and VM)
+
+### VM (GCP) (Live Demo)
+* Provision VM
+* Setup Database + Ruby
+* Clone Project
+* Expose Port 22
+
+---
+
+# END
+# Thanks for Coming
